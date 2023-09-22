@@ -1,0 +1,32 @@
+heartbeat.monitors:
+- type: icmp
+  id: webserver-ping
+  name: webserverping
+  enabled: true
+  schedule: '@every 10s'
+  hosts:
+    - "172.31.31.5"
+- type: icmp
+  id: dbserver-ping
+  name: dbserverping
+  enabled: true
+  schedule: '@every 10s'
+  hosts:
+    - "172.31.26.247"
+- type: http
+  enabled: true
+  id: webapp-ping
+  name: webapp-ping
+  hosts:
+    - http://172.31.31.5
+  check.request.method: HEAD
+  check.response.status: 
+    - 200
+  schedule: '@every 10s'
+- type: tcp
+  enabled: true
+  id: db-services
+  name: database service
+  hosts: ["172.31.26.247"]
+  ports: [3306]
+  schedule: '@every 10s'

@@ -1,0 +1,9 @@
+For suppose after completion of up above configuration steps for heartbeat is inactive after 1 day we use these commands and try to wake up the active state (heartbeat)
+
+sudo systemctl status heartbeat-elastic.service ( IT SHOWS THE BEAT IS ACTIVE OR NOT)
+
+sudo systemctl enable heartbeat-elastic.service ( IT EANBLE THE HEARTBEAT TO ACTIVE STATE )
+
+sudo systemctl start heartbeat-elastic.service ( IT STARTS THE HEARTBEAT )
+
+sudo systemctl status heartbeat-elastic.service ( IT SHOWS THE ACTIVE OR INACTIVE AFTER START THE HEARTBEAT )
